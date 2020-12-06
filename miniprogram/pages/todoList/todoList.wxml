@@ -1,0 +1,26 @@
+<view class="start">
+<input value="{{inputValue}}" bindblur= "getinputValue"  class="the_input" type="text" placeholder="请输入需要执行的操作！"></input>
+<button bindtap="add" type="primary" size="mini">添加</button>
+</view>
+<view class="tool">
+  <view>
+    查看已完成事项
+  </view>
+  <switch checked="{{isDONE}}" bindchange="switchisDONE"/>
+</view>
+<view class="cz">
+  <view class="order">序号</view>
+  <view class="things">待办事项</view>
+  <view class="holder">操作</view>
+</view>
+<checkbox-group bindchange="checkbosChange">
+  <view class="cz" wx:for="{{List}}" wx:key="id">
+  <checkbox value="{{item._id}}"></checkbox>
+  <view class="order">{{index+1}}</view>
+  <view class="things">{{item.title}}</view>
+  <button wx:if="{{!isDONE}}" data-id="{{item._id}}" bindtap="finish" class="control" type="primary" size="mini">完成</button>
+  <button wx:else data-id="{{item._id}}" bindtap="delete" class="control" type="warn" size="mini">删除</button>
+</view>
+</checkbox-group>
+<button wx:if="{{!isDONE}}"  bindtap="bacchandle" data-type="finish" type="primary">批量完成</button>
+  <button wx:else  bindtap="bacchandle" data-type="delete" type="warn">批量删除</button>

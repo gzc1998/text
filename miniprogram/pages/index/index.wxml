@@ -1,0 +1,9 @@
+<view>{{count}}</view>
+<button bindtap="add" type="primary">点我有惊喜</button>
+<button type="primary" bindtap="tosecondPage"> 点击进入第二个页面！</button>
+<template name="tem1">
+  <view>{{item}}</view>
+</template>
+<view wx:for="{{arr1}}" wx:key="item">
+  <template is="tem1" data='{{item}}'></template>
+</view>

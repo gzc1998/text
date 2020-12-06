@@ -1,0 +1,27 @@
+.start{
+  display:flex;
+}
+.the_input{
+  flex:1;
+}
+.cz{
+  display: flex;
+  padding: 5px;
+}
+.order{
+  flex:1;
+  text-align: center;
+}
+.things{
+  flex:5;
+  text-align: center;
+}
+.holder{
+  flex:1;
+  text-align: center;
+}
+.tool{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
